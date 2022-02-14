@@ -13,6 +13,7 @@ radio.onReceivedNumber(function (receivedNumber) {
             basic.showIcon(IconNames.Happy)
         } else if (receivedNumber == 2) {
             basic.showIcon(IconNames.Sad)
+        } else if (receivedNumber == 1) {
             basic.showIcon(IconNames.No)
         }
     } else if (tuplai == 2) {
@@ -23,6 +24,14 @@ radio.onReceivedNumber(function (receivedNumber) {
             . # # # .
             . . . . .
             `)
+        basic.pause(1500)
+        if (receivedNumber == 3) {
+            basic.showIcon(IconNames.Sad)
+        } else if (receivedNumber == 2) {
+            basic.showIcon(IconNames.No)
+        } else if (receivedNumber == 1) {
+            basic.showIcon(IconNames.Happy)
+        }
     } else if (tuplai == 3) {
         basic.showLeds(`
             # . . . #
@@ -31,6 +40,14 @@ radio.onReceivedNumber(function (receivedNumber) {
             # # . # #
             # # . # #
             `)
+        basic.pause(1500)
+    }
+    if (receivedNumber == 3) {
+        basic.showIcon(IconNames.No)
+    } else if (receivedNumber == 2) {
+        basic.showIcon(IconNames.Sad)
+    } else if (receivedNumber == 1) {
+        basic.showIcon(IconNames.Happy)
     }
 })
 input.onGesture(Gesture.Shake, function () {
